@@ -21,10 +21,12 @@ def adventure_game():
   weapons_room = ShipRoom('the weapons room', 'the lasers', 'The lasers are misaligned.', 'The lasers are perfectly aligned.', False, False, False, False, True, None, None, None, 'the medbay')
   shields_room = ShipRoom('the shields room', 'the shields', 'The shields are flickering.', 'The engines are holding strong.', False, False, False, False, True, None, None, None, 'the medbay')
   navigation_room = ShipRoom('the navigation room', 'the starmap', 'The starmap is faded.', 'The starmap is nice and vivid.', False, False, False, False, True, None, None, None, 'the medbay')
+
   engine_room.forward = medbay_room
   medbay_room.forward = navigation_room
   medbay_room.left = weapons_room
   medbay_room.right = shields_room
+  medbay_room.behind = engine_room
   weapons_room.behind = medbay_room
   shields_room.behind = medbay_room
   navigation_room.behind = medbay_room
